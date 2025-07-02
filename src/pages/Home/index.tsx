@@ -9,13 +9,11 @@ const HomePage = () => {
   const [filteredData, setFilteredData] = useState<Task[]>(data || []);
   const { state } = useLocation();
 
-  const { refetch } = state;
-
   useEffect(() => {
-    if (refetch) {
+    if (state?.refetch) {
       getData();
     }
-  }, [refetch]);
+  }, [state]);
 
   useEffect(() => {
     if (data?.length) setFilteredData(data);
