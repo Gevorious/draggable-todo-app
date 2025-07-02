@@ -1,0 +1,110 @@
+@use '@styles/variables.scss' as *;
+
+.columns {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 30%;
+    background: $surface;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid $border;
+    min-height: 300px;
+
+    .droppable-container {
+      flex: 1;
+    }
+
+    &[data-status='todo'] {
+      .task-card {
+        background: $todo-color;
+        .drag-zone {
+          background-color: #494f58;
+        }
+      }
+    }
+
+    &[data-status='in-progress'] {
+      .task-card {
+        background: $progress-color;
+        .drag-zone {
+          background-color: #205199;
+        }
+      }
+    }
+
+    &[data-status='done'] {
+      .task-card {
+        background: $done-color;
+        .drag-zone {
+          background-color: #1c9b4a;
+        }
+      }
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      user-select: none;
+      text-align: center;
+    }
+
+    .task-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+
+      .task-card {
+        display: flex;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        color: $text;
+
+        .drag-zone {
+          padding: 0.75rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: grab;
+          width: 48px;
+          border-right: 1px solid $border;
+
+          svg {
+            color: $muted;
+          }
+
+          &:active {
+            cursor: grabbing;
+          }
+        }
+
+        .content-zone {
+          flex-grow: 1;
+
+          .task-title {
+            width: 100%;
+            display: inline-block;
+            color: $text;
+            padding: 1rem;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}

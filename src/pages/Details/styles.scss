@@ -1,0 +1,79 @@
+@use '@styles/variables.scss' as *;
+
+.task-details {
+  background-color: $surface;
+  padding: 2rem;
+  border-radius: 12px;
+  color: $text;
+  max-width: 800px;
+  margin: 2rem auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+  .title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: $text;
+  }
+
+  .status {
+    display: inline-block;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+
+    &.todo {
+      background-color: $todo-color;
+      color: $text;
+    }
+
+    &.in_progress {
+      background-color: $progress-color;
+      color: #fff;
+    }
+
+    &.done {
+      background-color: $done-color;
+      color: #fff;
+    }
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: $muted;
+    white-space: pre-wrap;
+  }
+
+  .actions {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+
+    &.edit-btn {
+      background-color: $accent;
+      color: white;
+    }
+  }
+}
+
+.delete-btn {
+  background-color: #b91c1c;
+  color: white;
+
+  &:hover {
+    background-color: #991b1b;
+  }
+}
+
+.delete-modal-content {
+  text-align: center;
+
+  .delete-btn {
+    margin-top: 2rem;
+  }
+}

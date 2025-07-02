@@ -1,0 +1,22 @@
+@use './_variables.scss' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: $bg;
+  box-sizing: border-box;
+  color: $text;
+  line-height: 1;
+  letter-spacing: 0.5px;
+}
+
+.app {
+  padding: 2rem;
+}

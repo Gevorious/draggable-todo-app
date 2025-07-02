@@ -1,0 +1,64 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Set up project structure",
+      "description": "Initialize repo and setup linting",
+      "status": "todo"
+    },
+    {
+      "id": "2",
+      "title": "Design landing page",
+      "description": "Create wire frames and get feedback",
+      "status": "todo"
+    },
+    {
+      "id": "3",
+      "title": "Implement auth system",
+      "description": "Add login and signup functionality",
+      "status": "in_progress"
+    },
+    {
+      "id": "4",
+      "title": "Fix navbar responsiveness",
+      "description": "Make sure navbar works on all screen sizes",
+      "status": "done"
+    },
+    {
+      "id": "5",
+      "title": "Write unit tests for API",
+      "description": "Cover auth and task endpoints",
+      "status": "done"
+    },
+    {
+      "id": "6",
+      "title": "Refactor form components",
+      "description": "Make forms reusable across app",
+      "status": "in_progress"
+    },
+    {
+      "id": "7",
+      "title": "Optimize images",
+      "description": "Reduce image sizes for faster load",
+      "status": "in_progress"
+    },
+    {
+      "id": "8",
+      "title": "Deploy to staging",
+      "description": "Push latest version to staging server",
+      "status": "done"
+    },
+    {
+      "id": "9",
+      "title": "Create CI pipeline",
+      "description": "Automate testing and builds",
+      "status": "todo"
+    },
+    {
+      "id": "10",
+      "title": "Update documentation",
+      "description": "Add usage and deployment guides",
+      "status": "done"
+    }
+  ]
+}
