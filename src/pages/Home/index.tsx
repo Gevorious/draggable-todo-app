@@ -7,13 +7,15 @@ import { useLocation } from 'react-router-dom';
 const HomePage = () => {
   const [{ data }, getData] = useAxios<Task[]>('/tasks');
   const [filteredData, setFilteredData] = useState<Task[]>(data || []);
-  const location = useLocation();
+  const { state } = useLocation();
+
+  const { refetch } = state;
 
   useEffect(() => {
-    if (location.state?.refetch) {
+    if (refetch) {
       getData();
     }
-  }, [location.state]);
+  }, [refetch]);
 
   useEffect(() => {
     if (data?.length) setFilteredData(data);
