@@ -1,11 +1,4 @@
-import {
-  DndContext,
-  DragEndEvent,
-  PointerSensor,
-  TouchSensor,
-  useSensor,
-  useSensors,
-} from '@dnd-kit/core';
+import { DndContext, DragEndEvent } from '@dnd-kit/core';
 import './styles.scss';
 import { Task, TaskBoardProps, TaskStatus } from './types';
 import { groupTodosByStatus } from './helpers';
@@ -15,7 +8,6 @@ import { useEffect, useState } from 'react';
 
 const TaskBoard = ({ data, onStatusUpdate, searchTerm }: TaskBoardProps) => {
   const [tasks, setTasks] = useState<Task[]>(data);
-  const sensors = useSensors(useSensor(PointerSensor), useSensor(TouchSensor));
 
   useEffect(() => {
     setTasks(data);
@@ -48,7 +40,7 @@ const TaskBoard = ({ data, onStatusUpdate, searchTerm }: TaskBoardProps) => {
   return (
     <div>
       <div className="columns">
-        <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
+        <DndContext onDragEnd={handleDragEnd}>
           <div className="column" data-status="todo">
             <Droppable id="todo">
               <h2>To Do</h2>

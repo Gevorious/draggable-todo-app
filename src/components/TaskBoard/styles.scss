@@ -70,6 +70,7 @@
         color: $text;
 
         .drag-zone {
+          touch-action: none;
           padding: 0.75rem;
           display: flex;
           align-items: center;
