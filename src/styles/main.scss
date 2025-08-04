@@ -20,3 +20,15 @@ body {
 .app {
   padding: 2rem;
 }
+
+.spinner-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 120px;
+
+  .loading-notification {
+    margin-top: 24px;
+    text-align: center;
+  }
+}

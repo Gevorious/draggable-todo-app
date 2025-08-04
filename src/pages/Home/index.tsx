@@ -3,9 +3,10 @@ import useAxios from 'axios-hooks';
 import Content from './_partials/Content';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Spinner } from '@components';
 
 const HomePage = () => {
-  const [{ data }, getData] = useAxios<Task[]>('/tasks');
+  const [{ data, loading }, getData] = useAxios<Task[]>('/tasks');
   const [filteredData, setFilteredData] = useState<Task[]>(data || []);
   const { state } = useLocation();
 
@@ -22,7 +23,17 @@ const HomePage = () => {
   return (
     <div className="app">
       <h1>My Task Board</h1>
-      {data && (
+
+      {loading && (
+        <div className="spinner-wrapper">
+          <Spinner />
+          <p className="loading-notification">
+            Starting up the server... First load might be slow due to Render
+            sleep mode.
+          </p>
+        </div>
+      )}
+      {data && !loading && (
         <Content
           data={filteredData}
           refetch={getData}
