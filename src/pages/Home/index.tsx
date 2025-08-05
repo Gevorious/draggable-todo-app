@@ -28,8 +28,8 @@ const HomePage = () => {
         <div className="spinner-wrapper">
           <Spinner />
           <p className="loading-notification">
-            Starting up the server... First load might be slow due to Render
-            sleep mode.
+            Starting up the server... First load might be slow due to render.com
+            server sleep mode.
           </p>
         </div>
       )}
